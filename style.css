@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+.cover{
+  display: flex;
+  flex-direction: row;
+  width:100vw;
+  height:100vh;
+}
+.details{
+  width:30vw;
+  height:100vh;
+
+}
+.content{
+width:70vw;
+  height:100vh;
+
+}
