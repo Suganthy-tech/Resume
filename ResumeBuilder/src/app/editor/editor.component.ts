@@ -4,6 +4,11 @@ interface menuModal {
   icon: string;
 
 }
+interface activeMenuModal {
+  isLeft: boolean;
+  isActive: boolean;
+  index: number;
+}
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -32,9 +37,42 @@ export class EditorComponent implements OnInit {
       name: "Zoom in", icon: "fa-search-minus"
 
     }]
+  activeMenu: activeMenuModal = {
+    index: null, isActive: null, isLeft: null
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
+  onClickIconRight(index: number) {
+    if (this.activeMenu.index === index && this.activeMenu.isActive && !this.activeMenu.isLeft) {
+      this.activeMenu = {
+        index: null, isActive: null, isLeft: null
+      }
 
+    } else {
+      this.activeMenu = {
+        index: index, isActive: true, isLeft: false
+      }
+    }
+
+  }
+  onClickIconLeft(index: number) {
+    if (this.activeMenu.index === index && this.activeMenu.isActive && this.activeMenu.isLeft) {
+      this.activeMenu = {
+        index: null, isActive: null, isLeft: null
+      }
+
+    } else {
+      this.activeMenu = {
+        index: index, isActive: true, isLeft: true
+      }
+    }
+
+  }
+  onClickContainer() {
+    this.activeMenu = {
+      index: null, isActive: null, isLeft: null
+    }
+  }
 }

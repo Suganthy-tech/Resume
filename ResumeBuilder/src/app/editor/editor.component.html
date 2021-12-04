@@ -1,16 +1,27 @@
 <div class="resume">
     <div class="resume-editor">
-        <span *ngFor="let menu of leftMenuList" class="menu-icon">
+        <span *ngFor="let menu of leftMenuList;let i=index"
+            [ngClass]="{'menu-icon-active-left':i===activeMenu.index && activeMenu.isLeft && activeMenu.isActive}"
+            class="menu-icon" (click)="onClickIconLeft(i)">
             <i [ngClass]="menu.icon" class="fa-1s fc-menu fas"></i>
         </span>
     </div>
-    <div class="resume-container">
+    <div class="resume-details" *ngIf="activeMenu.isLeft && activeMenu.isActive">
+
+    </div>
+    <div class="resume-container" (click)="onClickContainer()">
         <app-resume></app-resume>
     </div>
+    <div class="resume-details" *ngIf="!activeMenu.isLeft && activeMenu.isActive">
+
+    </div>
     <div class="resume-editor">
-        <span *ngFor="let menu of rightMenuList" class="menu-icon">
+        <span *ngFor="let menu of rightMenuList;let i=index"
+            [ngClass]="{'menu-icon-active-right':i===activeMenu.index && !activeMenu.isLeft && activeMenu.isActive}"
+            class="menu-icon" (click)="onClickIconRight(i)">
             <i [ngClass]="menu.icon" class="fa-1s fc-menu fas"></i>
         </span>
     </div>
+
 
 </div>
