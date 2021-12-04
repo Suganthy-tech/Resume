@@ -1,0 +1,16 @@
+<div class="resume">
+    <div class="resume-editor">
+        <span *ngFor="let menu of leftMenuList" class="menu-icon">
+            <i [ngClass]="menu.icon" class="fa-1s fc-menu fas"></i>
+        </span>
+    </div>
+    <div class="resume-container">
+        <app-resume></app-resume>
+    </div>
+    <div class="resume-editor">
+        <span *ngFor="let menu of rightMenuList" class="menu-icon">
+            <i [ngClass]="menu.icon" class="fa-1s fc-menu fas"></i>
+        </span>
+    </div>
+
+</div>
