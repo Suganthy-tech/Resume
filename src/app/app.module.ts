@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FontAwesomeModule } from '@fortawesome/fontawesome-free';
 
@@ -17,7 +18,7 @@ import { ResumeComponent } from './editor/resume/resume.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,94 @@
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 interface menuModal {
   name: string;
   icon: string;
-
 }
 interface activeMenuModal {
   isLeft: boolean;
   isActive: boolean;
   index: number;
+  activeAnimation: string;
+
 }
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.scss']
+  styleUrls: ['./editor.component.scss'],
+  animations: [
+    trigger('openPanel', [
+      state('inLeft', style({
+        'opacity': '1',
+        'transform': 'translateX(0)'
+      })),
+      state('inRight', style({
+        'opacity': '1',
+        'transform': 'translateX(0)'
+      })),
+      transition('*=>inLeft', [
+        animate(300, style({
+          'opacity': '0',
+          'transform': 'translateX(-60px)'
+        })), animate(300)
+      ]),
+      transition('inLeft=>*', [
+        animate(300, keyframes([
+          style({
+            'opacity': '1',
+            'transform': 'translateX(0)',
+            'offset': '0'
+          }), style({
+            'opacity': '0.8',
+            'transform': 'translateX(-40px)',
+            'offset': '0.3'
+
+          }), style({
+            'opacity': '0.4',
+            'transform': 'translateX(-80px)',
+            'offset': '0.7'
+
+          }), style({
+            'opacity': '0',
+            'transform': 'translateX(-60px)',
+            'offset': '1'
+
+          })
+        ])),
+
+
+      ]),
+      transition('inRight=>*', [
+        animate(300, keyframes([
+          style({
+            'opacity': '1',
+            'transform': 'translateX(0)',
+            'offset': 0
+          }), style({
+            'opacity': '0.8',
+            'transform': 'translateX(20px)',
+            'offset': 0.3
+          }), style({
+            'opacity': '0.4',
+            'transform': 'translateX(40px)',
+            'offset': 0.5
+          }), style({
+            'opacity': '0',
+            'transform': 'translateX(60px)',
+            'offset': 1
+          })
+        ]))
+      ]),
+      transition('*=>inRight', [
+        animate(300, style({
+          'transform': 'translateX(60px)',
+          'opacity': '0'
+        })), animate(500)
+
+      ])
+    ]
+    )
+
+  ]
 })
 export class EditorComponent implements OnInit {
   leftMenuList: menuModal[] = [{ name: 'Intro', icon: "fa-user" },
@@ -38,7 +114,7 @@ export class EditorComponent implements OnInit {
 
     }]
   activeMenu: activeMenuModal = {
-    index: null, isActive: null, isLeft: null
+    index: null, isActive: null, isLeft: null, activeAnimation: ''
   }
   constructor() { }
 
@@ -47,12 +123,12 @@ export class EditorComponent implements OnInit {
   onClickIconRight(index: number) {
     if (this.activeMenu.index === index && this.activeMenu.isActive && !this.activeMenu.isLeft) {
       this.activeMenu = {
-        index: null, isActive: null, isLeft: null
+        index: null, isActive: null, isLeft: null, activeAnimation: ''
       }
 
     } else {
       this.activeMenu = {
-        index: index, isActive: true, isLeft: false
+        index: index, isActive: true, isLeft: false, activeAnimation: 'inRight'
       }
     }
 
@@ -60,19 +136,19 @@ export class EditorComponent implements OnInit {
   onClickIconLeft(index: number) {
     if (this.activeMenu.index === index && this.activeMenu.isActive && this.activeMenu.isLeft) {
       this.activeMenu = {
-        index: null, isActive: null, isLeft: null
+        index: null, isActive: null, isLeft: null, activeAnimation: ''
       }
 
     } else {
       this.activeMenu = {
-        index: index, isActive: true, isLeft: true
+        index: index, isActive: true, isLeft: true, activeAnimation: 'inLeft'
       }
     }
 
   }
   onClickContainer() {
     this.activeMenu = {
-      index: null, isActive: null, isLeft: null
+      index: null, isActive: null, isLeft: null, activeAnimation: ''
     }
   }
 }

@@ -6,13 +6,15 @@
             <i [ngClass]="menu.icon" class="fa-1s fc-menu fas"></i>
         </span>
     </div>
-    <div class="resume-details" *ngIf="activeMenu.isLeft && activeMenu.isActive">
+    <div class="resume-details" [@openPanel]="activeMenu.activeAnimation"
+        *ngIf="activeMenu.isLeft && activeMenu.isActive">
 
     </div>
     <div class="resume-container" (click)="onClickContainer()">
         <app-resume></app-resume>
     </div>
-    <div class="resume-details" *ngIf="!activeMenu.isLeft && activeMenu.isActive">
+    <div class="resume-details" [@openPanel]="activeMenu.activeAnimation"
+        *ngIf="!activeMenu.isLeft && activeMenu.isActive">
 
     </div>
     <div class="resume-editor">
