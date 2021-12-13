@@ -65,22 +65,22 @@ interface activeMenuModal {
             'offset': 0
           }), style({
             'opacity': '0.8',
-            'transform': 'translateX(20px)',
+            'transform': 'translateX(10px)',
             'offset': 0.3
           }), style({
             'opacity': '0.4',
-            'transform': 'translateX(40px)',
+            'transform': 'translateX(15px)',
             'offset': 0.5
           }), style({
             'opacity': '0',
-            'transform': 'translateX(60px)',
+            'transform': 'translateX(20px)',
             'offset': 1
           })
         ]))
       ]),
       transition('*=>inRight', [
         animate(300, style({
-          'transform': 'translateX(60px)',
+          'transform': 'translateX(20px)',
           'opacity': '0'
         })), animate(500)
 

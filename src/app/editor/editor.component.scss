@@ -3,25 +3,34 @@
     height: 100vh;
     display: flex;
     background-color: red;
+
     &-editor {
         width: 4%;
         height: 100%;
         background-color: #292323;
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        padding: 1% 0;
         z-index: 2;
+        transition: width 1s ease-in-out, left 1.5s ease-in-out;
     }
-    &-details {
-        width: 29%;
-        height: 100%;
-        background-color: #292323;
-    }
+
     &-container {
         width: 92%;
-        padding: 0 10rem;
+        padding: 0;
         margin: 0;
         height: 100%;
+        display: flex;
+        &-details {
+            width: 29%;
+            height: 100%;
+            background-color: #292323;
+        }
+        &-content {
+            padding: 0 10%;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 
@@ -33,7 +42,8 @@
 }
 .menu-icon {
     width: 100%;
-    padding: 1.2rem;
+    margin-bottom: 52%;
+    padding: 25% 25%;
     text-align: center;
     &-active-left {
         border-left: 2px white solid;
@@ -43,22 +53,14 @@
         border-right: 2px white solid;
         background-color: #413d3d;
     }
+    &:hover {
+        background-color: #413d3dbe;
+    }
 }
 @media only screen and (max-width: 600px) {
     .resume {
-        background: red;
         &-editor {
-            width: auto;
-            // height: 4%;
-            background-color: #292323;
-            display: flex;
-            flex-direction: column;
-            padding: 1.25rem 0;
-        }
-        &-details {
-            width: 30%;
-            height: 100%;
-            background-color: #292323;
+            width: 12%;
         }
     }
 }
@@ -68,12 +70,7 @@
     .resume {
         background: green;
         &-editor {
-            width: 7%;
-            // height: 4%;
-            background-color: #292323;
-            display: flex;
-            flex-direction: column;
-            padding: 1.25rem 0;
+            width: 12%;
         }
     }
 }
@@ -83,11 +80,7 @@
     .resume {
         background: blue;
         &-editor {
-            width: 7%;
-            background-color: #292323;
-            display: flex;
-            flex-direction: column;
-            padding: 1.25rem 0;
+            width: 10%;
         }
     }
 }
@@ -97,18 +90,17 @@
     .resume {
         background: orange;
         &-editor {
-            width: 4%;
-            background-color: #292323;
-            display: flex;
-            flex-direction: column;
-            padding: 1.25rem 0;
+            width: 6%;
         }
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .example {
-        background: pink;
+    .resume {
+        background: orange;
+        &-editor {
+            width: 4%;
+        }
     }
 }
