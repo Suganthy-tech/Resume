@@ -1,6 +1,38 @@
 .res {
-    height: 90vh;
     &-cover {
-        border-color: black;
+        margin: 5% 0;
+        border: 1px solid black;
+        height: 90vh;
+        width: 100%;
+        padding: 3%;
+
+        &-left {
+            width: 40%;
+        }
+        &-right {
+            width: 60%;
+            .content-wrapper {
+                position: relative;
+                &-body {
+                    padding: 3%;
+                    border: 1px solid rgb(10, 10, 10);
+                    border-radius: 4px;
+                    font-size: 0.75rem;
+                }
+                &-title {
+                    font-size: 0.85rem;
+                    font-weight: 400;
+                    font-family: Roboto;
+                    font-style: bold;
+                    position: absolute;
+                    color: rgb(38, 185, 230);
+                    padding: 1% 2%;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    top: -9%;
+                    left: 6%;
+                }
+            }
+        }
     }
 }

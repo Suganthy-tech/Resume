@@ -2,7 +2,6 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-color: red;
 
     &-editor {
         width: 4%;
@@ -25,11 +24,14 @@
             width: 29%;
             height: 100%;
             background-color: #292323;
+            transition: all 1s ease-in-out, left 1.5s ease-in-out;
         }
         &-content {
             padding: 0 10%;
             height: 100%;
             width: 100%;
+            transition-property: all;
+            transition-duration: 4s;
         }
     }
 }
@@ -37,10 +39,10 @@
 .fc-menu {
     color: white;
 }
-.fa-1s {
-    font-size: 1.25rem;
-}
+
 .menu-icon {
+    transition: width 1s ease-in-out, left 1.5s ease-in-out;
+
     width: 100%;
     margin-bottom: 52%;
     padding: 25% 25%;
@@ -68,7 +70,6 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .resume {
-        background: green;
         &-editor {
             width: 12%;
         }
@@ -78,7 +79,6 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .resume {
-        background: blue;
         &-editor {
             width: 10%;
         }
@@ -88,7 +88,6 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .resume {
-        background: orange;
         &-editor {
             width: 6%;
         }
@@ -98,7 +97,6 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .resume {
-        background: orange;
         &-editor {
             width: 4%;
         }

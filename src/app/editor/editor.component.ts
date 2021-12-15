@@ -26,13 +26,13 @@ interface activeMenuModal {
         'transform': 'translateX(0)'
       })),
       transition('*=>inLeft', [
-        animate(300, style({
+        animate(200, style({
           'opacity': '0',
           'transform': 'translateX(-60px)'
-        })), animate(300)
+        })), animate(200)
       ]),
       transition('inLeft=>*', [
-        animate(300, keyframes([
+        animate(200, keyframes([
           style({
             'opacity': '1',
             'transform': 'translateX(0)',
@@ -82,7 +82,7 @@ interface activeMenuModal {
         animate(300, style({
           'transform': 'translateX(20px)',
           'opacity': '0'
-        })), animate(500)
+        })), animate(300)
 
       ])
     ]

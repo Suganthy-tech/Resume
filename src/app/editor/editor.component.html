@@ -7,12 +7,10 @@
         </span>
     </div>
     <div class="resume-container">
-        <div class="resume-container-details" [@openPanel]="activeMenu.activeAnimation"
-            *ngIf="activeMenu.isLeft && activeMenu.isActive">
+        <div class="resume-container-details" [hidden]="!activeMenu.isLeft || activeMenu.isActive===null">
         </div>
         <app-resume class="resume-container-content" (click)="onClickContainer()"></app-resume>
-        <div class="resume-container-details" [@openPanel]="activeMenu.activeAnimation"
-            *ngIf="!activeMenu.isLeft && activeMenu.isActive">
+        <div class="resume-container-details" [hidden]="activeMenu.isLeft || activeMenu.isActive===null">
         </div>
     </div>
     <div class="resume-editor">

@@ -2,7 +2,9 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+    transition: all 1s ease-in-out, left 1.5s ease-in-out;
 }
 div,
 h1,
@@ -14,4 +16,13 @@ img {
     -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
     -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
     transition: width 1s ease-in-out, left 1.5s ease-in-out;
+}
+.fa-1s {
+    font-size: 1.25rem;
+}
+.fa-1xs {
+    font-size: 0.85rem;
+}
+.mr-xxs {
+    margin-right: 0.5rem;
 }
