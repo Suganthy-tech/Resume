@@ -1,0 +1,97 @@
+.content-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    &-body {
+        padding: 3%;
+        border: 1px solid rgb(124 117 117 / 51%);
+        border-radius: 4px;
+        font-size: 0.75rem;
+    }
+    &-title {
+        font-size: 0.85rem;
+        font-weight: 400;
+        font-family: Roboto;
+        font-style: bold;
+        position: absolute;
+        color: rgb(38, 185, 230);
+        padding: 1% 2%;
+        background-color: #fff;
+        border-radius: 4px;
+        top: -9%;
+        left: 6%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content-wrapper {
+        &-body {
+            font-size: 0.45rem;
+        }
+        &-title {
+            font-size: 0.55rem;
+            padding: 0.5% 1%;
+            top: -5%;
+            left: 6%;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content-wrapper {
+        &-body {
+            font-size: 0.55rem;
+        }
+        &-title {
+            font-size: 0.65rem;
+            padding: 0.75% 1.5%;
+            top: -9%;
+            left: 6%;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .content-wrapper {
+        &-body {
+            font-size: 0.65rem;
+        }
+        &-title {
+            font-size: 0.75rem;
+            padding: 1% 1.5%;
+            top: -12%;
+            left: 6%;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content-wrapper {
+        &-body {
+            font-size: 0.75rem;
+        }
+        &-title {
+            font-size: 0.85rem;
+            padding: 1% 1.5%;
+            top: -12%;
+            left: 6%;
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content-wrapper {
+        &-body {
+            font-size: 0.75rem;
+        }
+        &-title {
+            font-size: 0.85rem;
+            padding: 1% 1.5%;
+            top: -14%;
+            left: 6%;
+        }
+    }
+}
