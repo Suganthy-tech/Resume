@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EditorComponent } from './editor/editor.component';
 import { ResumeComponent } from './editor/resume/resume.component';
+import { CardComponent } from './Shared/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
-    ResumeComponent
+    ResumeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
